@@ -1,2 +1,2 @@
 # NLPY
-Python NLP Base Keras
+使用Keras实现各种自然语言处理任务，并对各种模型进行详细对比
