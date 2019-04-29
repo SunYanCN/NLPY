@@ -1,0 +1,40 @@
+{ "data":{
+  "path":"data/deu.txt",
+  "simples_nums":12500
+  },
+  "exp": {
+    "name": "fast_text"
+  },
+  "path": {
+    "glove_embedding":"",
+    "train_data_path":"datasets/glove.6B.100d.txt",
+    "test_data_path":"datasets/embed_tweets_de_100D_fasttext",
+    "figures_path":"figures/acc_loss.png"
+  },
+  "model":{
+    "embedding_dim":100,
+    "vocabulary_size":10000,
+    "class_num":1,
+    "sequence_length":1,
+    "last_activation":"sigmoid",
+    "learning_rate": 0.001,
+    "optimizer": "adam"
+  },
+  "trainer":{
+    "num_epochs": 30,
+    "batch_size": 128,
+    "validation_split":0.2,
+    "verbose_training": 2
+  },
+  "callbacks":{
+    "checkpoint_monitor": "val_loss",
+    "checkpoint_mode": "min",
+    "checkpoint_save_best_only": true,
+    "checkpoint_save_weights_only": true,
+    "checkpoint_verbose": true,
+    "tensorboard_write_graph": true,
+    "earlystopping_monitor": "val_loss",
+    "earlystopping_patience": 5,
+    "earlystopping_verbose": true
+  }
+}
